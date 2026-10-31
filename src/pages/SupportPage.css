@@ -59,6 +59,100 @@
   box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.12);
 }
 
+/* Direct Channels Strip */
+.support-contact-strip {
+  padding: 3rem 0 1rem 0;
+}
+
+.support-channels-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.channel-card {
+  display: flex;
+  align-items: center;
+  gap: 1.15rem;
+  padding: 1.5rem;
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  text-decoration: none;
+  transition: transform var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.channel-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-blue);
+  box-shadow: var(--shadow-md);
+}
+
+.channel-card-static {
+  cursor: default;
+}
+
+.channel-card-static:hover {
+  transform: none;
+  border-color: var(--border-subtle);
+  box-shadow: var(--shadow-sm);
+}
+
+.channel-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.channel-phone {
+  background: rgba(37, 99, 235, 0.1);
+  color: #1D4ED8;
+}
+
+.channel-email {
+  background: rgba(124, 58, 237, 0.1);
+  color: #7C3AED;
+}
+
+.channel-office {
+  background: rgba(22, 163, 74, 0.1);
+  color: #16A34A;
+}
+
+.channel-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin-bottom: 0.2rem;
+}
+
+.channel-val {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.15rem;
+  font-family: var(--font-heading);
+}
+
+.channel-sub {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 900px) {
+  .support-channels-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
 /* Split */
 .support-split-grid {
   display: grid;
@@ -131,35 +225,63 @@
   color: var(--text-muted);
 }
 
-/* Ticket Card */
-.ticket-card {
-  padding: 2.2rem;
+/* Helpdesk Action Card */
+.helpdesk-action-card {
+  padding: 2.25rem;
   background: var(--bg-secondary);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
 }
 
-.ticket-success {
-  text-align: center;
-  padding: 2rem 1rem;
+.helpdesk-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #15803D;
+  background: rgba(132, 204, 22, 0.12);
+  border: 1px solid rgba(132, 204, 22, 0.25);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.85rem;
+}
+
+.helpdesk-action-list {
   display: flex;
   flex-direction: column;
+  gap: 0.85rem;
+  margin-bottom: 1.75rem;
+}
+
+.helpdesk-btn {
+  display: inline-flex;
   align-items: center;
-}
-
-.ticket-success-icon {
-  color: #16A34A;
-  margin-bottom: 1rem;
-}
-
-.ticket-success h3 {
-  font-size: 1.3rem;
-  color: var(--text-primary);
-  margin-bottom: 0.5rem;
-}
-
-.ticket-success p {
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1.25rem;
   font-size: 0.9rem;
-  color: var(--text-secondary);
-  margin-bottom: 1.5rem;
+}
+
+.helpdesk-meta-box {
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.meta-row {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.meta-icon {
+  color: var(--accent-blue);
+  flex-shrink: 0;
 }
 
 @media (max-width: 860px) {

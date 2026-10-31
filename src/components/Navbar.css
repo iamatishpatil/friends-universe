@@ -24,14 +24,31 @@
 }
 
 .logo-icon-wrap {
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: var(--radius-sm);
-  background: var(--accent-blue);
-  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 3px;
+  flex-shrink: 0;
+  transition: all var(--transition-fast);
+}
+
+.brand-logo:hover .logo-icon-wrap {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(132, 204, 22, 0.5);
+  transform: scale(1.04);
+  box-shadow: 0 0 16px rgba(132, 204, 22, 0.2);
+}
+
+.navbar-brand-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
 }
 
 .brand-text {

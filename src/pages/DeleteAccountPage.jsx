@@ -1,31 +1,9 @@
-import React, { useState } from "react";
-import { ShieldAlert, Trash2, CheckCircle2, Clock, Info } from "lucide-react";
+import React from "react";
+import { ShieldAlert, Trash2, Clock, Info, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import "./LegalPages.css";
 
 export default function DeleteAccountPage() {
-  const [formData, setFormData] = useState({
-    email: "",
-    phone: "",
-    reason: "No longer using the app",
-    confirmCheckbox: false
-  });
-  const [submitted, setSubmitted] = useState(false);
-  const [processing, setProcessing] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!formData.confirmCheckbox) {
-      alert("Please check the confirmation box to authorize account deletion.");
-      return;
-    }
-    setProcessing(true);
-    setTimeout(() => {
-      setProcessing(false);
-      setSubmitted(true);
-    }, 600);
-  };
-
   return (
     <div className="legal-page">
       <div className="container legal-container">
@@ -79,84 +57,34 @@ export default function DeleteAccountPage() {
             </div>
           </div>
 
-          {/* Option 2: Web Form */}
+          {/* Option 2: Email Request */}
           <div className="corporate-card option-card">
             <div className="option-num">Option 2</div>
-            <h3 className="option-title">Online Request Form</h3>
+            <h3 className="option-title">Direct Email Request</h3>
             <p className="option-desc">
-              If you have already uninstalled the app, fill out this quick form:
+              If you have already uninstalled the app or cannot log in, email our support desk directly:
             </p>
 
-            {submitted ? (
-              <div className="deletion-success">
-                <CheckCircle2 size={40} className="success-icon" />
-                <h4>Request Received</h4>
-                <p>
-                  We have received your account deletion request for <strong>{formData.email}</strong>. 
-                  Our team will process the permanent deletion from our active systems.
-                </p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="deletion-form">
-                <div className="form-group">
-                  <label className="form-label">Registered Email Address</label>
-                  <input 
-                    type="email" 
-                    className="form-input" 
-                    required 
-                    placeholder="name@example.com"
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  />
-                </div>
+            <ol className="option-steps">
+              <li>Send an email to <strong>support@friendsuniverse.in</strong>.</li>
+              <li>Use subject: <strong>Account Deletion Request - inbbl</strong>.</li>
+              <li>Include your registered email address or phone number.</li>
+            </ol>
 
-                <div className="form-group">
-                  <label className="form-label">Registered Phone Number (Optional)</label>
-                  <input 
-                    type="tel" 
-                    className="form-input" 
-                    placeholder="+91 98765 43210"
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  />
-                </div>
+            <div className="deletion-action-wrap" style={{ marginTop: "1.5rem" }}>
+              <a 
+                href="mailto:support@friendsuniverse.in?subject=Account%20Deletion%20Request%20-%20inbbl&body=Hello%20Friends%20Universe%20Support,%0A%0APlease%20permanently%20delete%20my%20inbbl%20account%20and%20all%20associated%20data.%0A%0ARegistered%20Email:%20%0ARegistered%20Phone:%20"
+                className="btn btn-primary w-100 delete-submit-btn"
+                style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", gap: "0.5rem", textDecoration: "none" }}
+              >
+                <Mail size={16} />
+                <span>Email Support for Deletion</span>
+              </a>
+            </div>
 
-                <div className="form-group">
-                  <label className="form-label">Reason (Optional)</label>
-                  <select 
-                    className="form-select"
-                    value={formData.reason}
-                    onChange={(e) => setFormData({ ...formData, reason: e.target.value })}
-                  >
-                    <option value="No longer using the app">No longer using the app</option>
-                    <option value="Privacy concerns">Privacy concerns</option>
-                    <option value="Created another account">Created another account</option>
-                    <option value="Other">Other</option>
-                  </select>
-                </div>
-
-                <div className="checkbox-group">
-                  <input 
-                    type="checkbox" 
-                    id="confirmCheck"
-                    required
-                    checked={formData.confirmCheckbox}
-                    onChange={(e) => setFormData({ ...formData, confirmCheckbox: e.target.checked })}
-                  />
-                  <label htmlFor="confirmCheck">
-                    I understand that deleting my account is permanent and cannot be undone.
-                  </label>
-                </div>
-
-                <button 
-                  type="submit" 
-                  className="btn btn-primary w-100 delete-submit-btn"
-                  disabled={processing}
-                >
-                  {processing ? "Submitting..." : "Submit Deletion Request"}
-                </button>
-              </form>
-            )}
+            <div className="option-meta" style={{ marginTop: "1.25rem" }}>
+              <Clock size={14} /> Processed within 24-48 business hours
+            </div>
           </div>
 
         </div>
@@ -170,7 +98,7 @@ export default function DeleteAccountPage() {
           <div className="policy-dpo-note">
             <Info size={16} />
             <span>
-              Need help? Feel free to reach out via our <Link to="/support" className="inline-link">Help Portal</Link>.
+              Need assistance? Email our support team at <a href="mailto:support@friendsuniverse.in" className="inline-link">support@friendsuniverse.in</a> or call <a href="tel:+918087763470" className="inline-link">+91 80877 63470</a>. You can also visit our <Link to="/support" className="inline-link">Help Portal</Link>.
             </span>
           </div>
         </div>

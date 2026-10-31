@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Globe, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -26,9 +26,15 @@ export default function Navbar() {
     <header className="navbar-header">
       <div className="container navbar-container">
         {/* Brand Logo */}
-        <Link to="/" className="brand-logo">
+        <Link to="/" className="brand-logo" aria-label="Friends Universe Private Limited Home">
           <div className="logo-icon-wrap">
-            <Globe className="logo-icon" size={18} />
+            <img 
+              src="/logo-icon.png" 
+              alt="Friends Universe Logo" 
+              className="navbar-brand-img"
+              width="38"
+              height="38" 
+            />
           </div>
           <div className="brand-text">
             <span className="brand-name">FRIENDS UNIVERSE</span>
@@ -36,25 +42,25 @@ export default function Navbar() {
           </div>
         </Link>
 
-        {/* Clean Desktop Navigation (No clutter) */}
+        {/* Clean Desktop Navigation */}
         <nav className="desktop-nav">
-          <Link to="/" className={`nav-link ${location.pathname === "/" ? "active" : ""}`}>
+          <Link to="/" className={`nav-link ${location.pathname === "/" && !location.hash ? "active" : ""}`}>
             Home
           </Link>
-          <button 
-            type="button" 
+          <Link 
+            to="/#product" 
             className="nav-link" 
             onClick={() => scrollToSection("product")}
           >
             inbbl (App)
-          </button>
-          <button 
-            type="button" 
+          </Link>
+          <Link 
+            to="/#services" 
             className="nav-link" 
             onClick={() => scrollToSection("services")}
           >
             What We Do
-          </button>
+          </Link>
           <Link to="/about" className={`nav-link ${location.pathname === "/about" ? "active" : ""}`}>
             About
           </Link>
@@ -65,13 +71,13 @@ export default function Navbar() {
 
         {/* Contact Action */}
         <div className="nav-actions">
-          <button 
-            type="button" 
+          <Link 
+            to="/#contact" 
             className="btn btn-primary nav-cta"
             onClick={() => scrollToSection("contact")}
           >
             Contact Us
-          </button>
+          </Link>
 
           <button 
             type="button" 
@@ -90,12 +96,12 @@ export default function Navbar() {
           <Link to="/" className="mobile-link" onClick={() => setMobileMenuOpen(false)}>
             Home
           </Link>
-          <button type="button" className="mobile-link" onClick={() => scrollToSection("product")}>
+          <Link to="/#product" className="mobile-link" onClick={() => scrollToSection("product")}>
             inbbl (Upcoming App)
-          </button>
-          <button type="button" className="mobile-link" onClick={() => scrollToSection("services")}>
+          </Link>
+          <Link to="/#services" className="mobile-link" onClick={() => scrollToSection("services")}>
             What We Do
-          </button>
+          </Link>
           <Link to="/about" className="mobile-link" onClick={() => setMobileMenuOpen(false)}>
             About Us
           </Link>
@@ -104,13 +110,13 @@ export default function Navbar() {
           </Link>
 
           <div className="mobile-action-wrap">
-            <button 
-              type="button" 
-              className="btn btn-primary w-100"
+            <Link 
+              to="/#contact" 
+              className="btn btn-primary w-100 text-center"
               onClick={() => scrollToSection("contact")}
             >
               Contact Us
-            </button>
+            </Link>
           </div>
         </div>
       </div>

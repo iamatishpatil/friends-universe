@@ -1,19 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { 
-  Smartphone, Server, Layers, CheckCircle2, ArrowRight, 
-  Send, Sparkles, MessageSquare, Shield, MapPin, Heart
+  Smartphone, Server, Layers, ArrowRight, 
+  Sparkles, MessageSquare, Shield, MapPin, Building2,
+  Phone, Mail
 } from "lucide-react";
 import "./HomePage.css";
 
 export default function HomePage() {
-  const [formState, setFormState] = useState({
-    name: "",
-    email: "",
-    subject: "General Question",
-    message: ""
-  });
-  const [formSubmitted, setFormSubmitted] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const services = [
     {
@@ -36,15 +29,6 @@ export default function HomePage() {
     }
   ];
 
-  const handleFormSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setFormSubmitted(true);
-      setFormState({ name: "", email: "", subject: "General Question", message: "" });
-    }, 600);
-  };
 
   return (
     <div className="home-page">
@@ -52,7 +36,14 @@ export default function HomePage() {
       <section className="hero-section">
         <div className="container hero-container">
           <div className="badge badge-brand hero-badge">
-            Friends Universe Private Limited
+            <img 
+              src="/logo-icon.png" 
+              alt="Friends Universe" 
+              className="hero-badge-logo" 
+              width="18" 
+              height="18" 
+            />
+            <span>Friends Universe Private Limited</span>
           </div>
 
           <h1 className="hero-headline">
@@ -102,10 +93,11 @@ export default function HomePage() {
       <section id="product" className="section product-section">
         <div className="container">
           <div className="section-header">
-            <span className="section-tag">Featured Mobile App</span>
-            <h2 className="section-title">inbbl — A simpler way to talk and connect.</h2>
+            <span className="section-tag">Flagship Mobile Platform</span>
+            <h2 className="section-title">inbbl - Same world. Closer.</h2>
             <p className="section-description">
-              Most social platforms today feel noisy, crowded, and stressful. We are building inbbl to bring back real conversations.
+              A thoughtful social communication mobile platform built for real people and real moments. 
+              Connect, chat, call, discover, and share without algorithmic noise.
             </p>
           </div>
 
@@ -116,45 +108,69 @@ export default function HomePage() {
               <div className="product-details">
                 <div className="product-badges">
                   <span className="badge badge-brand">Upcoming Mobile App</span>
-                  <span className="badge badge-subtle">Voice &amp; Community Spaces</span>
+                  <span className="badge badge-purple">Social &amp; Live Voice</span>
                 </div>
 
-                <h3 className="product-name">inbbl</h3>
-                <p className="product-tagline">
-                  Building genuine conversations and meaningful human connections.
-                </p>
+                <div className="inbbl-header-lockup">
+                  <img src="/inbbl-icon.png" alt="inbbl app icon" className="inbbl-title-icon" width="44" height="44" />
+                  <div>
+                    <h3 className="product-name">inbbl</h3>
+                    <p className="product-tagline">Real people. Real moments.</p>
+                  </div>
+                </div>
 
                 <p className="product-description">
-                  Whether it is hopping into a casual voice room to chat about music, finding friends who share your 
-                  hobbies, or just unwinding with a relaxed voice conversation after work, inbbl is designed to be 
-                  welcoming, safe, and easy to use.
+                  inbbl brings people together through fluid conversation, spontaneous voice spaces, and authentic community connections. 
+                  Represented by the playful dolphin inside a communication bubble, inbbl is designed to be welcoming, safe, and joyful.
                 </p>
 
-                <div className="product-features">
-                  <h4 className="features-heading">What to expect inside inbbl:</h4>
-                  <ul>
-                    <li>
-                      <CheckCircle2 size={16} className="feature-icon" />
-                      <span>Live voice and audio rooms for spontaneous, relaxed chats</span>
-                    </li>
-                    <li>
-                      <CheckCircle2 size={16} className="feature-icon" />
-                      <span>Respectful community spaces with simple reporting tools</span>
-                    </li>
-                    <li>
-                      <CheckCircle2 size={16} className="feature-icon" />
-                      <span>Topic-based circles to help you find people with shared interests</span>
-                    </li>
-                    <li>
-                      <CheckCircle2 size={16} className="feature-icon" />
-                      <span>Built for smooth performance on both iPhone and Android devices</span>
-                    </li>
-                  </ul>
+                {/* 5 Core Feature Pillars */}
+                <div className="inbbl-pillars-grid">
+                  <div className="pillar-item">
+                    <span className="pillar-dot"></span>
+                    <strong>CONNECT</strong>
+                    <p>Meet authentic friends with shared passions</p>
+                  </div>
+                  <div className="pillar-item">
+                    <span className="pillar-dot"></span>
+                    <strong>CHAT</strong>
+                    <p>Real-time messaging &amp; friendly group spaces</p>
+                  </div>
+                  <div className="pillar-item">
+                    <span className="pillar-dot"></span>
+                    <strong>CALL</strong>
+                    <p>Spontaneous live audio &amp; relaxed voice rooms</p>
+                  </div>
+                  <div className="pillar-item">
+                    <span className="pillar-dot"></span>
+                    <strong>MAP</strong>
+                    <p>Local discovery &amp; nearby community events</p>
+                  </div>
+                  <div className="pillar-item">
+                    <span className="pillar-dot"></span>
+                    <strong>POST</strong>
+                    <p>Share everyday moments without pressure</p>
+                  </div>
+                </div>
+
+                {/* Why a dolphin */}
+                <div className="dolphin-philosophy-card">
+                  <div className="dolphin-badge">Brand Philosophy</div>
+                  <p>
+                    <strong>Why a dolphin?</strong> Dolphins are social, playful, and always connected. 
+                    They bring people together through natural harmony - just like <strong>inbbl</strong>.
+                  </p>
+                  <div className="dolphin-values">
+                    <span className="dolphin-pill">Social</span>
+                    <span className="dolphin-pill">Flow</span>
+                    <span className="dolphin-pill">Friendship</span>
+                    <span className="dolphin-pill">Positive</span>
+                  </div>
                 </div>
 
                 <div className="product-action-row">
                   <span className="product-status-text">
-                    Currently in active mobile development for App Store and Google Play.
+                    In active mobile development for Apple App Store and Google Play.
                   </span>
                   <a href="#contact" className="btn btn-outline">
                     Ask About inbbl
@@ -162,32 +178,54 @@ export default function HomePage() {
                 </div>
               </div>
 
-              {/* Product Visual Box */}
+              {/* Product Identity Box (Clean Logo & Explanation, No screenshots) */}
               <div className="product-visual-box">
-                <div className="app-preview-card">
-                  <div className="preview-header">
-                    <div className="preview-dot"></div>
-                    <span className="preview-title">inbbl App Preview</span>
-                    <span className="preview-badge">UPCOMING</span>
+                <div className="inbbl-clean-card">
+                  <div className="inbbl-clean-header">
+                    <img 
+                      src="/inbbl-icon.png" 
+                      alt="inbbl Official Logo Emblem" 
+                      className="inbbl-clean-logo" 
+                      width="80" 
+                      height="80" 
+                    />
+                    <div className="inbbl-clean-brand">
+                      <h4>inbbl</h4>
+                      <span className="inbbl-clean-tagline">Same world. Closer.</span>
+                    </div>
                   </div>
 
-                  <div className="preview-body">
-                    <div className="preview-app-icon">
-                      <Sparkles size={36} color="#1D4ED8" />
-                    </div>
-                    <h4 className="preview-app-name">inbbl</h4>
-                    <p className="preview-app-desc">Social Voice &amp; Connection Platform</p>
-                    
-                    <div className="preview-feature-box">
-                      <MessageSquare size={16} className="feature-box-icon" />
-                      <span>Real-Time Voice Rooms</span>
+                  <div className="inbbl-clean-highlights">
+                    <div className="clean-highlight-item">
+                      <div className="clean-dot"></div>
+                      <div>
+                        <strong>Spontaneous Voice Rooms</strong>
+                        <p>Drop-in casual voice spaces without camera pressure or social fatigue.</p>
+                      </div>
                     </div>
 
-                    <div className="preview-pill-row">
-                      <span className="pill">iOS Support</span>
-                      <span className="pill">Android Support</span>
-                      <span className="pill">Safe Community</span>
+                    <div className="clean-highlight-item">
+                      <div className="clean-dot"></div>
+                      <div>
+                        <strong>Real-Time Community Connections</strong>
+                        <p>Topic circles and local map discovery built for genuine human interaction.</p>
+                      </div>
                     </div>
+
+                    <div className="clean-highlight-item">
+                      <div className="clean-dot"></div>
+                      <div>
+                        <strong>Respectful Privacy Architecture</strong>
+                        <p>No audio recording sales, transparent controls, and easy self-service deletion.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="inbbl-clean-footer">
+                    <span className="clean-pill">iOS Support</span>
+                    <span className="clean-pill">Android Support</span>
+                    <span className="clean-pill">Safe Community</span>
+                    <span className="clean-pill">Zero Data Sales</span>
                   </div>
                 </div>
               </div>
@@ -274,114 +312,74 @@ export default function HomePage() {
       <section id="contact" className="section contact-section">
         <div className="container">
           <div className="contact-card corporate-card">
-            <div className="contact-grid">
-              
-              {/* Contact Info */}
-              <div className="contact-info">
-                <span className="section-tag">Let's Talk</span>
-                <h2 className="contact-title">Send Us a Message</h2>
-                <p className="contact-desc">
-                  Have a question about Friends Universe Private Limited, curious about the upcoming launch of inbbl, 
-                  or want to discuss a software project? Drop us a note below and our team will get back to you.
-                </p>
+            <div className="contact-hub-header">
+              <span className="section-tag">Direct Communication</span>
+              <h2 className="contact-title">Contact Friends Universe</h2>
+              <p className="contact-desc">
+                Have a question about our upcoming mobile platform <strong>inbbl</strong>, need technical assistance, 
+                or want to explore working with our engineering team? Reach out directly through any of our official channels below.
+              </p>
+            </div>
 
-                <div className="contact-details-list">
-                  <div className="contact-detail-item">
-                    <MapPin size={18} className="detail-icon" />
-                    <div>
-                      <div className="detail-label">Location</div>
-                      <div className="detail-val">Bengaluru, Karnataka, India</div>
-                    </div>
-                  </div>
+            <div className="contact-hub-grid">
+              {/* Channel 1: Phone */}
+              <div className="contact-hub-item">
+                <div className="hub-icon-wrap hub-phone">
+                  <Phone size={24} />
+                </div>
+                <h3>Direct Phone</h3>
+                <p className="hub-val">+91 80877 63470</p>
+                <p className="hub-sub">Mon - Sat, 9:30 AM - 6:30 PM IST</p>
+                <a href="tel:+918087763470" className="btn btn-primary w-100 hub-btn">
+                  <span>Call Us Directly</span>
+                  <ArrowRight size={15} />
+                </a>
+              </div>
 
-                  <div className="contact-detail-item">
-                    <Heart size={18} className="detail-icon" />
-                    <div>
-                      <div className="detail-label">Support &amp; Feedback</div>
-                      <div className="detail-val">We read every message and respond as quickly as possible.</div>
-                    </div>
-                  </div>
+              {/* Channel 2: Support Email */}
+              <div className="contact-hub-item">
+                <div className="hub-icon-wrap hub-email">
+                  <Mail size={24} />
+                </div>
+                <h3>Support &amp; Helpdesk</h3>
+                <p className="hub-val">support@friendsuniverse.in</p>
+                <p className="hub-sub">App support, deletion, &amp; store inquiries</p>
+                <a href="mailto:support@friendsuniverse.in" className="btn btn-outline w-100 hub-btn">
+                  <span>Email Support Desk</span>
+                  <ArrowRight size={15} />
+                </a>
+              </div>
+
+              {/* Channel 3: Corporate Email */}
+              <div className="contact-hub-item">
+                <div className="hub-icon-wrap hub-corp">
+                  <Building2 size={24} />
+                </div>
+                <h3>Corporate Inquiries</h3>
+                <p className="hub-val">contact@friendsuniverse.in</p>
+                <p className="hub-sub">Partnerships &amp; software engineering</p>
+                <a href="mailto:contact@friendsuniverse.in" className="btn btn-outline w-100 hub-btn">
+                  <span>Send Corporate Note</span>
+                  <ArrowRight size={15} />
+                </a>
+              </div>
+            </div>
+
+            {/* Statutory Registered Office Banner */}
+            <div className="contact-hub-footer">
+              <div className="hub-footer-row">
+                <div className="hub-footer-col">
+                  <span className="hub-footer-lbl">Legal Entity</span>
+                  <strong>Friends Universe Private Limited</strong>
+                  <span className="hub-cin-text">CIN: U62090KA2026PTC215046</span>
+                </div>
+                <div className="hub-footer-col">
+                  <span className="hub-footer-lbl">Principal Place of Business &amp; Registered Office</span>
+                  <span>46/4, Novel Tech Park, Begur, Gb Palya Kudlu Gate, Bengaluru Urban, Karnataka - 560068, India</span>
                 </div>
               </div>
-
-              {/* Form */}
-              <div className="contact-form-wrap">
-                {formSubmitted ? (
-                  <div className="form-success">
-                    <CheckCircle2 size={38} className="success-icon" />
-                    <h3>Message Sent!</h3>
-                    <p>Thank you for reaching out. We will review your note and get back to your email shortly.</p>
-                    <button 
-                      type="button" 
-                      className="btn btn-secondary"
-                      onClick={() => setFormSubmitted(false)}
-                    >
-                      Send Another Note
-                    </button>
-                  </div>
-                ) : (
-                  <form onSubmit={handleFormSubmit} className="contact-form">
-                    <div className="form-group">
-                      <label className="form-label">Your Name</label>
-                      <input 
-                        type="text" 
-                        className="form-input" 
-                        required 
-                        placeholder="e.g. Rahul Sharma"
-                        value={formState.name}
-                        onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                      />
-                    </div>
-
-                    <div className="form-group">
-                      <label className="form-label">Email Address</label>
-                      <input 
-                        type="email" 
-                        className="form-input" 
-                        required 
-                        placeholder="you@example.com"
-                        value={formState.email}
-                        onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                      />
-                    </div>
-
-                    <div className="form-group">
-                      <label className="form-label">What is this regarding?</label>
-                      <select 
-                        className="form-select"
-                        value={formState.subject}
-                        onChange={(e) => setFormState({ ...formState, subject: e.target.value })}
-                      >
-                        <option value="inbbl Question">inbbl Mobile App Inquiry</option>
-                        <option value="Software Project">Software Development Services</option>
-                        <option value="General Question">General Question</option>
-                      </select>
-                    </div>
-
-                    <div className="form-group">
-                      <label className="form-label">Message</label>
-                      <textarea 
-                        className="form-textarea" 
-                        required 
-                        rows={4}
-                        placeholder="Tell us what you have in mind..."
-                        value={formState.message}
-                        onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                      />
-                    </div>
-
-                    <button 
-                      type="submit" 
-                      className="btn btn-primary submit-btn w-100"
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? "Sending..." : "Send Message"}
-                    </button>
-                  </form>
-                )}
-              </div>
-
             </div>
+
           </div>
         </div>
       </section>

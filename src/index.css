@@ -15,6 +15,17 @@
   --accent-blue-light: #EFF6FF;
   --accent-slate: #334155;
 
+  /* Official Brand Colors (Friends Universe Logo) */
+  --brand-green: #15803D;
+  --brand-green-hover: #166534;
+  --brand-green-light: #F0FDF4;
+  --brand-lime: #84CC16;
+  --brand-lime-hover: #65A30D;
+  --brand-lime-light: #F7FEE7;
+  --brand-forest: #0E3821;
+  --brand-gradient: linear-gradient(135deg, #84CC16 0%, #22C55E 50%, #15803D 100%);
+  --brand-glow: 0 0 24px rgba(132, 204, 22, 0.25);
+
   --text-primary: #0F172A;
   --text-secondary: #475569;
   --text-muted: #64748B;

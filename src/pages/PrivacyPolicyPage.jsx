@@ -122,11 +122,13 @@ export default function PrivacyPolicyPage() {
           <div className="doc-section">
             <h2>8. Contacting Us</h2>
             <p>
-              If you have any questions or feedback regarding this Privacy Policy or your data, you can reach out to us through our <Link to="/support" className="inline-link">Support &amp; Help Portal</Link> or the contact form on our website.
+              If you have any questions or feedback regarding this Privacy Policy or your data, you can reach out to us through our <Link to="/support" className="inline-link">Support &amp; Help Portal</Link> or by contacting our team directly.
             </p>
             <div className="legal-contact-card">
               <div><strong>Friends Universe Private Limited</strong></div>
-              <div>Bengaluru, Karnataka, India</div>
+              <div className="legal-cin-text">CIN: U62090KA2026PTC215046</div>
+              <div>46/4, Novel Tech Park, Begur, Gb Palya Kudlu Gate, Bengaluru Urban, Karnataka - 560068, India</div>
+              <div>Email: <a href="mailto:support@friendsuniverse.in" className="inline-link">support@friendsuniverse.in</a> &nbsp;|&nbsp; Phone: <a href="tel:+918087763470" className="inline-link">+91 80877 63470</a></div>
             </div>
           </div>
 

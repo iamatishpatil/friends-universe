@@ -1,18 +1,11 @@
 import React, { useState } from "react";
-import { HelpCircle, ChevronDown, CheckCircle2, Search, MessageSquare, MapPin } from "lucide-react";
+import { HelpCircle, ChevronDown, Search, MapPin, Phone, Mail, Clock, ArrowRight, ShieldCheck } from "lucide-react";
+import { Link } from "react-router-dom";
 import "./SupportPage.css";
 
 export default function SupportPage() {
   const [activeFaq, setActiveFaq] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
-  const [ticketState, setTicketState] = useState({
-    name: "",
-    email: "",
-    subject: "inbbl Question",
-    message: ""
-  });
-  const [ticketSubmitted, setTicketSubmitted] = useState(false);
-  const [submitting, setSubmitting] = useState(false);
 
   const faqs = [
     {
@@ -29,23 +22,13 @@ export default function SupportPage() {
     },
     {
       q: "How do I report a problem or reach your team?",
-      a: "Simply fill out the form on this page with your question or feedback. We read every message and will respond directly to your email address."
+      a: "You can call our direct helpline at +91 80877 63470 (Mon - Sat, 9:30 AM - 6:30 PM IST) or email our support desk directly at support@friendsuniverse.in. We read every message and respond within 24-48 business hours."
     }
   ];
 
   const filteredFaqs = faqs.filter(
     (f) => f.q.toLowerCase().includes(searchQuery.toLowerCase()) || f.a.toLowerCase().includes(searchQuery.toLowerCase())
   );
-
-  const handleTicketSubmit = (e) => {
-    e.preventDefault();
-    setSubmitting(true);
-    setTimeout(() => {
-      setSubmitting(false);
-      setTicketSubmitted(true);
-      setTicketState({ name: "", email: "", subject: "inbbl Question", message: "" });
-    }, 600);
-  };
 
   return (
     <div className="support-page">
@@ -59,7 +42,7 @@ export default function SupportPage() {
 
           <h1 className="support-title">How can we help?</h1>
           <p className="support-subtitle">
-            Find quick answers to common questions about inbbl, or send our team a direct message below.
+            Find quick answers to common questions about inbbl, reach out to our team directly, or contact our support desk below.
           </p>
 
           <div className="support-search-box">
@@ -75,7 +58,47 @@ export default function SupportPage() {
         </div>
       </section>
 
-      {/* Main Split */}
+      {/* Direct Contact Cards */}
+      <section className="support-contact-strip">
+        <div className="container">
+          <div className="support-channels-grid">
+            <a href="tel:+918087763470" className="channel-card">
+              <div className="channel-icon-wrap channel-phone">
+                <Phone size={22} />
+              </div>
+              <div className="channel-content">
+                <div className="channel-label">Direct Helpline</div>
+                <div className="channel-val">+91 80877 63470</div>
+                <div className="channel-sub">Mon - Sat, 9:30 AM - 6:30 PM IST</div>
+              </div>
+            </a>
+
+            <a href="mailto:support@friendsuniverse.in" className="channel-card">
+              <div className="channel-icon-wrap channel-email">
+                <Mail size={22} />
+              </div>
+              <div className="channel-content">
+                <div className="channel-label">Support Email</div>
+                <div className="channel-val">support@friendsuniverse.in</div>
+                <div className="channel-sub">24-48 hour response SLA</div>
+              </div>
+            </a>
+
+            <div className="channel-card channel-card-static">
+              <div className="channel-icon-wrap channel-office">
+                <MapPin size={22} />
+              </div>
+              <div className="channel-content">
+                <div className="channel-label">Registered Office</div>
+                <div className="channel-val">Novel Tech Park, Begur</div>
+                <div className="channel-sub">Bengaluru, Karnataka - 560068</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Main Split: FAQs on left, Direct Helpdesk Card on right */}
       <section className="section support-body-section">
         <div className="container support-split-grid">
           
@@ -105,91 +128,51 @@ export default function SupportPage() {
                 ))
               ) : (
                 <div className="corporate-card no-results">
-                  <p>No answers found for "{searchQuery}". Please send us a message below.</p>
+                  <p>No answers found for "{searchQuery}". Please reach out to our support team directly.</p>
                 </div>
               )}
             </div>
           </div>
 
-          {/* Ticket Form */}
+          {/* Direct Helpdesk Box (Replaced unbacked form) */}
           <div className="ticket-column">
-            <div className="corporate-card ticket-card">
-              <h2 className="ticket-card-title">Send Us a Question</h2>
-              <p className="ticket-card-desc">Need assistance? Fill out this short form and we will reply to your email.</p>
+            <div className="corporate-card helpdesk-action-card">
+              <div className="helpdesk-badge">
+                <ShieldCheck size={14} />
+                <span>Official Helpdesk</span>
+              </div>
+              <h2 className="ticket-card-title">Need Dedicated Assistance?</h2>
+              <p className="ticket-card-desc">
+                Our support team is available to assist users, beta testers, and store reviewers. Contact us directly using any method below:
+              </p>
 
-              {ticketSubmitted ? (
-                <div className="ticket-success">
-                  <CheckCircle2 size={40} className="ticket-success-icon" />
-                  <h3>Message Received!</h3>
-                  <p>Thank you for reaching out. We will get back to you as soon as possible.</p>
-                  <button 
-                    type="button" 
-                    className="btn btn-secondary"
-                    onClick={() => setTicketSubmitted(false)}
-                  >
-                    Send Another Note
-                  </button>
+              <div className="helpdesk-action-list">
+                <a href="tel:+918087763470" className="btn btn-primary w-100 helpdesk-btn">
+                  <Phone size={16} />
+                  <span>Call +91 80877 63470</span>
+                </a>
+
+                <a href="mailto:support@friendsuniverse.in" className="btn btn-outline w-100 helpdesk-btn">
+                  <Mail size={16} />
+                  <span>Email support@friendsuniverse.in</span>
+                </a>
+
+                <Link to="/delete-account" className="btn btn-secondary w-100 helpdesk-btn">
+                  <span>Account &amp; Data Deletion Portal</span>
+                  <ArrowRight size={14} />
+                </Link>
+              </div>
+
+              <div className="helpdesk-meta-box">
+                <div className="meta-row">
+                  <Clock size={14} className="meta-icon" />
+                  <span>Hours: Mon - Sat, 9:30 AM - 6:30 PM IST</span>
                 </div>
-              ) : (
-                <form onSubmit={handleTicketSubmit} className="ticket-form">
-                  <div className="form-group">
-                    <label className="form-label">Your Name</label>
-                    <input 
-                      type="text" 
-                      className="form-input" 
-                      required 
-                      placeholder="e.g. Priya Patel"
-                      value={ticketState.name}
-                      onChange={(e) => setTicketState({ ...ticketState, name: e.target.value })}
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label className="form-label">Email Address</label>
-                    <input 
-                      type="email" 
-                      className="form-input" 
-                      required 
-                      placeholder="you@example.com"
-                      value={ticketState.email}
-                      onChange={(e) => setTicketState({ ...ticketState, email: e.target.value })}
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label className="form-label">Topic</label>
-                    <select 
-                      className="form-select"
-                      value={ticketState.subject}
-                      onChange={(e) => setTicketState({ ...ticketState, subject: e.target.value })}
-                    >
-                      <option value="inbbl Question">inbbl App Question</option>
-                      <option value="Account Deletion">Account or Data Question</option>
-                      <option value="General Question">General Feedback</option>
-                    </select>
-                  </div>
-
-                  <div className="form-group">
-                    <label className="form-label">How can we help?</label>
-                    <textarea 
-                      className="form-textarea" 
-                      required 
-                      rows={4}
-                      placeholder="Describe your question or issue..."
-                      value={ticketState.message}
-                      onChange={(e) => setTicketState({ ...ticketState, message: e.target.value })}
-                    />
-                  </div>
-
-                  <button 
-                    type="submit" 
-                    className="btn btn-primary submit-btn w-100"
-                    disabled={submitting}
-                  >
-                    {submitting ? "Sending..." : "Submit Question"}
-                  </button>
-                </form>
-              )}
+                <div className="meta-row">
+                  <MapPin size={14} className="meta-icon" />
+                  <span>Novel Tech Park, Begur, Bengaluru - 560068</span>
+                </div>
+              </div>
             </div>
           </div>
 
