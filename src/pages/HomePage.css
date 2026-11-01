@@ -785,11 +785,38 @@
   color: var(--text-muted);
 }
 
-.hub-cin-text {
+.hub-id-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.65rem;
+  margin-top: 0.35rem;
+}
+
+.hub-id-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+
+.hub-id-lbl {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.hub-id-chip code {
   font-family: monospace;
-  font-size: 0.82rem;
+  font-size: 0.8rem;
+  font-weight: 600;
   color: #15803D;
-  margin-top: 0.15rem;
+  background: rgba(21, 128, 61, 0.09);
+  border: 1px solid rgba(21, 128, 61, 0.2);
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.03em;
 }
 
 @media (max-width: 900px) {

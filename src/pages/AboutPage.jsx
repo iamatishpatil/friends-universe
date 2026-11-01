@@ -1,7 +1,7 @@
 import React from "react";
 import { 
   Shield, Cpu, Building2, MapPin, ArrowRight, MessageCircle,
-  Phone, Mail 
+  Phone, Mail, FileText, ShieldCheck, Users 
 } from "lucide-react";
 import { Link } from "react-router-dom";
 import "./AboutPage.css";
@@ -163,24 +163,26 @@ export default function AboutPage() {
                     </div>
                   </div>
 
-                  <div className="corp-info-item">
-                    <Building2 size={18} className="corp-icon" />
-                    <div>
-                      <div className="corp-lbl">Corporate Identification Number (CIN)</div>
-                      <div className="corp-val"><code className="corp-cin-badge">U62090KA2026PTC215046</code></div>
+                  <div className="corp-reg-pair">
+                    <div className="corp-info-item">
+                      <FileText size={18} className="corp-icon" />
+                      <div>
+                        <div className="corp-lbl">Corporate Identification Number (CIN)</div>
+                        <div className="corp-val"><code className="corp-cin-badge">U62090KA2026PTC215046</code></div>
+                      </div>
+                    </div>
+
+                    <div className="corp-info-item">
+                      <ShieldCheck size={18} className="corp-icon" />
+                      <div>
+                        <div className="corp-lbl">Dun &amp; Bradstreet (D-U-N-S®) Number</div>
+                        <div className="corp-val"><code className="corp-cin-badge">77-201-0629</code></div>
+                      </div>
                     </div>
                   </div>
 
                   <div className="corp-info-item">
-                    <Building2 size={18} className="corp-icon" />
-                    <div>
-                      <div className="corp-lbl">Dun &amp; Bradstreet (D-U-N-S®) Number</div>
-                      <div className="corp-val"><code className="corp-cin-badge">77-201-0629</code></div>
-                    </div>
-                  </div>
-
-                  <div className="corp-info-item">
-                    <Building2 size={18} className="corp-icon" />
+                    <Users size={18} className="corp-icon" />
                     <div>
                       <div className="corp-lbl">Director &amp; Leadership</div>
                       <div className="corp-val">Shrikan Patel (Director)</div>

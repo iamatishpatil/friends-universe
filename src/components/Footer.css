@@ -96,15 +96,42 @@
 
 .footer-reg-row .reg-icon {
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: 3px;
   color: #84CC16;
 }
 
-.cin-code {
-  color: #E2E8F0;
-  font-family: monospace;
-  font-size: 0.82rem;
+.footer-reg-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.65rem;
+}
+
+.footer-reg-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  white-space: nowrap;
+}
+
+.reg-tag-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #64748B;
   letter-spacing: 0.04em;
+}
+
+.cin-code {
+  color: #A3E635;
+  background: rgba(163, 230, 53, 0.1);
+  border: 1px solid rgba(163, 230, 53, 0.22);
+  padding: 0.1rem 0.42rem;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  white-space: nowrap;
 }
 
 .footer-contact-link {

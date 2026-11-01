@@ -126,9 +126,22 @@ export default function PrivacyPolicyPage() {
             </p>
             <div className="legal-contact-card">
               <div><strong>Friends Universe Private Limited</strong></div>
-              <div className="legal-cin-text">CIN: U62090KA2026PTC215046 &nbsp;|&nbsp; D-U-N-S: 77-201-0629</div>
+              <div className="legal-id-badges">
+                <span className="legal-id-chip">
+                  <span className="legal-id-lbl">CIN:</span>
+                  <code>U62090KA2026PTC215046</code>
+                </span>
+                <span className="legal-id-chip">
+                  <span className="legal-id-lbl">D-U-N-S®:</span>
+                  <code>77-201-0629</code>
+                </span>
+              </div>
               <div>46/4, Novel Tech Park, Begur, Gb Palya Kudlu Gate, Bengaluru Urban, Karnataka - 560068, India</div>
-              <div>Email: <a href="mailto:support@friendsuniverse.in" className="inline-link">support@friendsuniverse.in</a> &nbsp;|&nbsp; Phone: <a href="tel:+918087763470" className="inline-link">+91 80877 63470</a></div>
+              <div className="legal-channels-row">
+                <span>Email: <a href="mailto:support@friendsuniverse.in" className="inline-link">support@friendsuniverse.in</a></span>
+                <span className="legal-divider">|</span>
+                <span>Phone: <a href="tel:+918087763470" className="inline-link">+91 80877 63470</a></span>
+              </div>
             </div>
           </div>
 

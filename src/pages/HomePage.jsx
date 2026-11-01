@@ -371,7 +371,16 @@ export default function HomePage() {
                 <div className="hub-footer-col">
                   <span className="hub-footer-lbl">Legal Entity</span>
                   <strong>Friends Universe Private Limited</strong>
-                  <span className="hub-cin-text">CIN: U62090KA2026PTC215046 &nbsp;|&nbsp; D-U-N-S: 77-201-0629</span>
+                  <div className="hub-id-badges">
+                    <span className="hub-id-chip">
+                      <span className="hub-id-lbl">CIN:</span>
+                      <code>U62090KA2026PTC215046</code>
+                    </span>
+                    <span className="hub-id-chip">
+                      <span className="hub-id-lbl">D-U-N-S®:</span>
+                      <code>77-201-0629</code>
+                    </span>
+                  </div>
                 </div>
                 <div className="hub-footer-col">
                   <span className="hub-footer-lbl">Principal Place of Business &amp; Registered Office</span>

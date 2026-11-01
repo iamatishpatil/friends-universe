@@ -125,12 +125,49 @@
   margin-top: 0.75rem;
 }
 
-.legal-cin-text {
+.legal-id-badges {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.65rem;
+  margin: 0.2rem 0;
+}
+
+.legal-id-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+
+.legal-id-lbl {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.legal-id-chip code {
   font-family: monospace;
-  font-size: 0.82rem;
-  color: #15803D;
+  font-size: 0.8rem;
   font-weight: 600;
+  color: #15803D;
+  background: rgba(21, 128, 61, 0.09);
+  border: 1px solid rgba(21, 128, 61, 0.2);
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-sm);
   letter-spacing: 0.03em;
+}
+
+.legal-channels-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.65rem;
+}
+
+.legal-divider {
+  color: var(--border-medium);
 }
 
 /* Deletion Warning Card */

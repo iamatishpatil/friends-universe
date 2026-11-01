@@ -36,7 +36,16 @@ export default function Footer() {
             <div className="footer-reg-box">
               <div className="footer-reg-row">
                 <Building2 size={14} className="reg-icon" />
-                <span>CIN: <strong className="cin-code">U62090KA2026PTC215046</strong> &nbsp;|&nbsp; D-U-N-S: <strong className="cin-code">77-201-0629</strong></span>
+                <div className="footer-reg-badges">
+                  <span className="footer-reg-tag">
+                    <span className="reg-tag-label">CIN:</span>
+                    <strong className="cin-code">U62090KA2026PTC215046</strong>
+                  </span>
+                  <span className="footer-reg-tag">
+                    <span className="reg-tag-label">D-U-N-S®:</span>
+                    <strong className="cin-code">77-201-0629</strong>
+                  </span>
+                </div>
               </div>
               <div className="footer-reg-row">
                 <Phone size={14} className="reg-icon" />
