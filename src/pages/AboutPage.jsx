@@ -89,6 +89,7 @@ export default function AboutPage() {
                 <div className="brand-specs-chips">
                   <span className="spec-chip">Legal Entity: Friends Universe Pvt. Ltd.</span>
                   <span className="spec-chip">CIN: U62090KA2026PTC215046</span>
+                  <span className="spec-chip">D-U-N-S®: 77-201-0629</span>
                   <span className="spec-chip">Flagship Product: inbbl</span>
                 </div>
               </div>
@@ -167,6 +168,14 @@ export default function AboutPage() {
                     <div>
                       <div className="corp-lbl">Corporate Identification Number (CIN)</div>
                       <div className="corp-val"><code className="corp-cin-badge">U62090KA2026PTC215046</code></div>
+                    </div>
+                  </div>
+
+                  <div className="corp-info-item">
+                    <Building2 size={18} className="corp-icon" />
+                    <div>
+                      <div className="corp-lbl">Dun &amp; Bradstreet (D-U-N-S®) Number</div>
+                      <div className="corp-val"><code className="corp-cin-badge">77-201-0629</code></div>
                     </div>
                   </div>
 
